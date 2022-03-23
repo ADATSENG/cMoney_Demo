@@ -1,17 +1,17 @@
 import React, {  useEffect, useState }  from "react";
-import Loading from '../../components/loading'
+import Loading from '@components/loading'
 import data from './data.json'
 
-import Select from '../../components/select'
-import Table from '../../components/table'
-import Item from '../../components/item'
-import Pagination from '../../components/pagination'
-import Photo from '../../components/photo'
+import Select from '@components/select'
+import Table from '@components/table'
+import Item from '@components/item'
+import Pagination from '@components/pagination'
+import Photo from '@components/photo'
 import { uniq,chunk } from 'lodash'
 
 import   './index.scss'
-import  '../../styles/layout.scss'
-import {MODE} from '../../utils'
+import  '@styles/layout.scss'
+import { MODE, MODE_KEY } from '@utils'
 
 
 const PAGE_LIMIT=10
@@ -88,6 +88,20 @@ const Home =()=>{
           setMode(item)
       }
 
+      const renderScreenMode =(key)=>{
+        switch (key) {
+            case MODE_KEY.FaThList:
+               return <Item data={chunkData[currentPage-1]}></Item> 
+            case MODE_KEY.FaThLarge:
+                return <Photo data={chunkData[currentPage-1]}></Photo>
+            case MODE_KEY.FaAlignJustify:
+                return <Table data={chunkData[currentPage-1]}></Table>
+            default:
+                return  <Item data={chunkData[currentPage-1]}></Item> 
+
+        }
+      }
+
         const updateModeView = ()=>{
             return(
                 <div>
@@ -112,10 +126,7 @@ const Home =()=>{
              </div>
                     </div>
                   
-               
-                {mode.key==="FaThList" && <Item data={chunkData[currentPage-1]}></Item> }
-                 {mode.key==="FaThLarge"&&<Photo data={chunkData[currentPage-1]}></Photo>}
-                 {mode.key==="FaAlignJustify"&&<Table data={chunkData[currentPage-1]}></Table>}
+               {renderScreenMode(mode.key)}
 
                     </div>
                             
@@ -134,17 +145,16 @@ const Home =()=>{
             {updateModeView()}
                   <div className="home__advertise">
                 <div>
-                <img src="/img/adv1.png" alt=""></img>
+                <img src={process.env.PUBLIC_URL+"/img/adv1.png"} alt=""></img>
                 </div>
                 <div>
-                <img src="/img/adv2.png" alt=""></img>
+                <img src={process.env.PUBLIC_URL+"/img/adv2.png"} alt=""></img>
                 </div>
                 <div className="sticky">
-                <img src="/img/adv3.png" alt=""></img>
+                <img src={process.env.PUBLIC_URL+"/img/adv3.png"} alt=""></img>
                 </div>
                 </div>
-                
-
+            
          </div>
 
          <div className="rowVCenter">
@@ -154,10 +164,7 @@ const Home =()=>{
          limit={PAGE_LIMIT}
          total={totalPage.length}
      />
-
-
          </div>
-         
          </>
          
          }

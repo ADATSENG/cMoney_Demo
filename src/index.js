@@ -1,7 +1,7 @@
 import React, {lazy,Suspense} from 'react';
 import ReactDOM from 'react-dom';
 import {
-  BrowserRouter,
+  HashRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -14,14 +14,14 @@ const Home = lazy(() => import('./pages/home'));
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
         <Suspense fallback="loading...">
     <Routes>
         <Route path="/" element={<Home></Home>} />
 
     </Routes>
        </Suspense>
-  </BrowserRouter>,
+  </HashRouter>
   
   </React.StrictMode>,
   document.getElementById('root')

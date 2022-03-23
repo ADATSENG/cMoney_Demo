@@ -17,3 +17,9 @@ export const MODE = {
     }
 
 }
+
+export const MODE_KEY = {
+    FaThList:'FaThList',
+    FaThLarge:'FaThLarge',
+    FaAlignJustify:'FaAlignJustify'
+}
