@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {lazy,Suspense} from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
+import './index.scss';
+
 import reportWebVitals from './reportWebVitals';
+
+const Home = lazy(() => import('./pages/home'));
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Suspense fallback="loading...">
+    <Routes>
+        <Route path="/" element={<Home></Home>} />
+
+    </Routes>
+       </Suspense>
+  </BrowserRouter>,
+  
   </React.StrictMode>,
   document.getElementById('root')
 );

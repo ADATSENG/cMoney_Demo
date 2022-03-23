@@ -1,0 +1,71 @@
+.photo{
+
+  &__wrapper{
+      display: flex;
+  }
+  &__cube{
+    background-color:#0ba5d2;
+    color:white;
+    padding: 0 5px;
+    margin-right: 5px;
+  }
+  &__title{
+    padding: 0;
+    font-size: 16px;
+  }
+  &__section{
+    position:absolute;
+    bottom:0;
+    left:10px;
+    color:white
+  }
+  &__image{
+    width: 500px;
+    height: 200px;
+    max-width: 100%;
+
+
+  }
+  &__hotWords{
+    -webkit-line-clamp:2;
+  }
+  &__hr{
+    width: 35px;
+    height: 2px;
+    background-color: white;
+  }
+  &__briefly{
+    display: none;
+  }
+  &:hover{
+    .photo__briefly{
+      display: block;
+      animation: slide-up 0.9s cubic-bezier(0.65, 0, 0.35, 1) both;
+
+
+    }
+  
+  }
+
+  @media (max-width: 576px) { 
+
+    &__wrapper{
+      display: block;
+    }
+    .photo{
+      padding: 10px;
+    }
+   }
+
+   @keyframes slide-up {
+    0% {
+      transform: translateY(100px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+}
+
+

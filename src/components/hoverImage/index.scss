@@ -1,0 +1,49 @@
+.hoverImage{
+  cursor: pointer;
+
+  position: relative;
+
+
+
+  &__mask{
+
+    background-color: black;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    opacity: .2;
+  }
+  &__wrapper{
+    overflow: hidden;
+  }
+
+  img{
+
+    transition: all 2s ease-in-out;
+
+
+  }
+  &:hover  {
+    img{
+      transform: scale(1.3);
+
+    }
+    .hoverImage__mask{
+    opacity: 0;
+    }
+
+    
+    }
+
+    @media (max-width: 576px) { 
+      max-width: 100%;
+    }
+  
+
+}
+
+
+

@@ -1,0 +1,23 @@
+.home{
+  &__icon {
+    padding: 6px;
+    cursor: pointer;
+  }
+  &__container{
+    padding:0 70px;
+
+  }
+  &__wrapper{
+    padding: 0 5%;
+  }
+ 
+  @media (max-width: 992px) { 
+    &__advertise{
+      display: none;
+    }
+
+   }
+}
+
+
+

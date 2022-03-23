@@ -1,0 +1,74 @@
+
+.row {
+  display: flex;
+}
+
+.rowCenter {
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.wrap{
+  flex-wrap: wrap;
+}
+.rowHCenter{
+  display: flex;
+  align-items: center;
+}
+.center{
+  align-items: center;
+  justify-content: center;
+}
+.justifyContentBetween {
+  display: flex;
+ justify-content: space-between;
+}
+.rowVCenter{
+  display: flex;
+  justify-content: center;
+}
+.objectFit{
+  object-fit: contain;
+}
+.objectCover{
+  object-fit: cover;
+}
+.alignLeft{
+  text-align:left;
+
+}
+.relative{
+  position:relative;
+}
+.italic{
+  font-style: italic;
+}
+.bold{
+  font-weight: bold;
+}
+
+
+
+.ellipsis {
+
+  display: -webkit-box;
+  overflow: hidden;
+
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+.sticky{
+  position: sticky;
+top: 0;
+}
+
+.px-5{
+  padding-left: 1.25rem; /* 20px */
+  padding-right: 1.25rem; /* 20px */
+
+}
+
+
+
+

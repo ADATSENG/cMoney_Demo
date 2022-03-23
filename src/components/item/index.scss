@@ -1,0 +1,82 @@
+.item{
+  &__cube{
+    background-color:#0ba5d2;
+    color:white;
+    height:20px;
+    width:40px;
+
+  }
+  &__tag{
+    position: absolute;
+    left: -40px;
+    top: 0;
+   
+  }
+  &__title{
+    font-size: 1rem;
+  }
+  &__town{
+    position: absolute;
+    left: -20px;
+    top: 27px;
+    writing-mode: vertical-lr;
+}
+&__list{
+  background-color:white;
+  height:200px;
+
+  border:1px solid #3333;
+  padding:10px;
+  position:relative;
+}
+&__leftImage{
+  width:250px;
+  height: 200px;
+
+}
+&__section{
+  margin:15px
+}
+&__hotWords{
+  letter-spacing: .5px;
+  color: #999999;
+  line-height: 20px;
+  -webkit-line-clamp:3;
+
+}
+&__forMobile{
+  display: none;
+}
+
+
+@media (max-width: 576px) { 
+  &__list{
+
+    height:300px;
+    flex-wrap: wrap;
+
+  }
+ 
+  &__hotWords{
+    -webkit-line-clamp:2;
+  }
+  &__forMobile{
+    display: block;
+  }
+  &__cube{
+    margin-right: 10px;
+  }
+  &__forWeb{
+    display: none;
+  }
+  &__leftImage{
+    width:400px;
+    height: 180px;
+  
+  }
+  
+  
+
+ }
+  }
+ 

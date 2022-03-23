@@ -1,0 +1,27 @@
+.pagination{
+
+  &__ul{
+    list-style: none;
+  }
+
+  &__link{
+    cursor: pointer;
+    background-color: #dddddd;
+    margin: 2px;
+  }
+
+
+
+  li {
+    padding: 10px;
+  }
+  @media (max-width: 576px) { 
+    &__ul{
+      flex-wrap: wrap;
+    }
+
+  &__title{
+    display: none;
+  }
+   }
+}
